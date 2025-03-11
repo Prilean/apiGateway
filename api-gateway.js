@@ -40,16 +40,16 @@ function authRole(role) {
 }
 
 app.use('/auth', (req, res) => {
-    proxy.web(req, res, { target: 'http://localhost:5001' });
+    proxy.web(req, res, { target: 'http://54.172.100.216:5001' });
 })
 
 app.use('/user/products', authToken, authRole('user'), (req, res) => {
     console.log("INSIDE API GATEWAY ORDER VIEW")
-    proxy.web(req, res, { target: 'http://localhost:5002' });
+    proxy.web(req, res, { target: 'http://54.172.100.216:5002' });
 })
 
 app.use('/admin/products', authToken, authRole('admin'), (req, res) => {
-    proxy.web(req, res, { target: 'http://localhost:5003' });
+    proxy.web(req, res, { target: 'http://54.234.105.135:5003' });
 })
 
 app.listen(port, () => {
