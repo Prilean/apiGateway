@@ -40,7 +40,7 @@ function authRole(role) {
 }
 
 app.use('/auth', (req, res) => {
-    proxy.web(req, res, { target: 'http://54.172.100.216:5001' });
+    proxy.web(req, res, { target: 'http://3.93.163.42:5001' });
 })
 
 app.use('/user/products', authToken, authRole('user'), (req, res) => {
